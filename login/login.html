@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Log-in</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="loginres.css">
+
+  <link rel="website icon" type="png" href="/sprite/sprite-img/kaiflogo.webp">
+</head>
+
+<body>
+
+  
+
+  <div id="preloder"></div>
+  <div id="preloder2"></div>
+
+  <div id="dot"></div>
+
+  <div class="container">
+
+    <div class="drop">
+
+      <div class="contant">
+        <h2>sign in</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+          <input type="hidden" name="access_key" value="d659f2a3-5a98-4222-9c21-5e49b5acce91">
+
+          <div class="input">
+
+            <input type="text" name="username" placeholder="username" required>
+          </div>
+
+          <div class="input">
+
+
+            <input type="password" name="number" placeholder="password" required>
+          </div>
+
+          <div class="input">
+
+            <input type="submit" value="log in">
+
+
+          </div>
+
+
+        </form>
+
+      </div>
+    </div>
+    <button href="" id="forget" class="btn">forget passoword</button>
+    <button href="" id="signup" class="btn signup">sign up</button>
+
+
+
+
+  </div>
+
+  <div id="p2" class="p2">
+
+    <div class="container">
+
+      <div class="drop">
+
+        <div class="contant">
+          <h2>sign up</h2>
+          <form action="https://api.web3forms.com/submit" method="POST">
+
+            <input type="hidden" name="access_key" value="d659f2a3-5a98-4222-9c21-5e49b5acce91">
+
+
+            <div class="input">
+
+              <input type="email" name="email" placeholder="email" required>
+            </div>
+
+            <div class="input">
+
+              <input type="text" name="username" placeholder="username" required>
+            </div>
+
+            <div class="input">
+
+
+              <input type="password" name="number" placeholder="password" required>
+            </div>
+
+            <div class="input">
+
+              <input type="submit" value="Sign up">
+
+
+            </div>
+
+
+          </form>
+
+        </div>
+      </div>
+      <button href="" id="forget2" class="btn">forget passoword</button>
+      <button href="" id="signin" id="signin2" class="btn signup">sign in</button>
+
+
+
+
+    </div>
+
+
+  </div>
+
+
+
+
+  <div id="p3" class="p3">
+
+    <div class="container">
+
+      <div class="drop">
+
+        <div class="contant">
+          <h2>Forget </h2>
+          <form action="https://api.web3forms.com/submit" method="POST">
+
+            <input type="hidden" name="access_key" value="d659f2a3-5a98-4222-9c21-5e49b5acce91">
+
+
+            <div class="input">
+
+              <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input">
+
+
+              <input type="password" name="number" placeholder="Old password" required>
+            </div>
+
+            <div class="input">
+
+
+              <input type="password" name="number" placeholder=" New password" required>
+            </div>
+
+            <div class="input">
+
+              <input type="submit" value="FORGET">
+
+
+            </div>
+
+
+          </form>
+
+        </div>
+      </div>
+      <!-- <a class="btn">forget passoword</a> -->
+      <button href="" id="signinf" class="btn">sign in</button>
+
+      <button href="" id="signupf"></button>
+
+
+
+
+    </div>
+
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+  <!-- locomotive off -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <script>
+
+
+
+    window.onload = function () {
+      let gifUrl = 'https://cdn.dribbble.com/userupload/29450875/file/original-2f0f564fd2081f477cd42d2ffaec77fa.gif';
+
+      let preloader1 = document.getElementById('preloder');
+      let preloader2 = document.getElementById('preloder2');
+
+
+      preloader1.style.backgroundImage = `url('${gifUrl}?${new Date().getTime()}')`;
+      preloader2.style.backgroundImage = `url('${gifUrl}?${new Date().getTime()}')`;
+    };
+
+
+    function locoscroll() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  
+
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("body"),
+    smooth: true,
+    lerp: 0.02,
+  });
+  
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  
+  ScrollTrigger.scrollerProxy("body", {
+    scrollTop(value) {
+      return arguments.length
+        ? locoScroll.scrollTo(value, 0, 0)
+        : locoScroll.scroll.instance.scroll.y;
+    }, 
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+   
+    pinType: document.querySelector("body").style.transform
+      ? "transform"
+      : "fixed",
+  });
+
+  
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  
+  ScrollTrigger.refresh();
+}
+locoscroll();
+
+
+    var body = document.querySelector("body");
+    var dot = document.querySelector("#dot");
+
+    body.addEventListener("mousemove", function (dets) {
+      gsap.to(dot, {
+        x: dets.x,
+        y: dets.y,
+        duration: 1,
+        ease: "back.out",
+      });
+    });
+
+
+    var signup = document.getElementById('signup')
+    var signupf = document.getElementById('signupf')
+    var signin = document.getElementById('signin')
+    var btn = document.querySelector('.btn')
+
+    var signinf = document.getElementById('signinf')
+    var forget = document.getElementById('forget')
+    var forget2 = document.getElementById('forget2')
+    var p2 = document.getElementById('p2')
+    var p3 = document.getElementById('p3')
+
+
+
+    signup.addEventListener('click', () => {
+
+      p2.style.display = 'block';
+      p2.style.transform = 'translateY(0vh)';
+      p2.style.transition = '2s';
+      // p2.style.opacity="1"
+
+
+    })
+    signin.addEventListener('click', () => {
+
+      // p2.style.display = 'block';
+      p2.style.transform = 'translateY(-100vh)';
+      p2.style.transition = '2s';
+      // p2.style.opacity="1"
+
+
+    })
+    forget.addEventListener('click', () => {
+
+      p3.style.display = 'block';
+      p3.style.transform = 'translateY(0vh)';
+      p3.style.transition = '2s';
+      // p2.style.opacity="1"
+
+
+    })
+
+    signupf.addEventListener('click', () => {
+
+      p2.style.display = 'block';
+      p2.style.transform = 'translateY(0vh)';
+      p2.style.transition = '2s';
+      p2.style.width = '60%'
+
+
+    })
+
+    signinf.addEventListener('click', () => {
+
+      p3.style.display = 'block';
+      p3.style.transform = 'translateY(-100vh)';
+      p3.style.transition = '2s';
+      // p3.style.width = '60%'
+
+
+    })
+    forget2.addEventListener('click', () => {
+
+      p2.style.display = 'block';
+      p3.style.transform = 'translateY(0vh)';
+      p2.style.transform = 'translateY(-100vh)';
+
+
+
+
+
+
+
+
+    })
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

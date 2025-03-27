@@ -1,0 +1,333 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #d1d1d1c4;
+  /* background: rgba(255, 166, 0, 0.205); */
+  font-family: sans-serif;
+}
+
+#dot {
+  position: absolute;
+  height: 3vh;
+  top: 0vh;
+  font-size: 1rem;
+  border-radius: 50%;
+  /* background-color: rgb(255, 0, 0); */
+  border: 2px dotted rgb(255, 255, 255);
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  z-index: 20;
+  width: 3vh;
+  left: 1vw;
+}
+
+
+#preloder{
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  background: #cfcfcf;
+  z-index: 9999;
+  background-size: 100% 192%;
+}
+#preloder2 {
+  position: fixed;
+  width: 100%;
+  height: 50%;
+  background: #cfcfcf;
+  z-index: 9999;
+  background-size: 100% 209%;
+}
+
+#preloder {
+  animation: slideTop 2s ease-in-out forwards;
+  animation-delay: 3s;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+#preloder2 {
+  animation: slideBottom 2s ease-in-out forwards;
+  animation-delay: 3s;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+@keyframes slideTop {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: -100%;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    bottom: 0;
+  }
+
+  100% {
+    bottom: -100%;
+  }
+}
+
+
+
+
+.container{
+  position: relative;
+  left: -80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh;
+  width: 100%; */
+}
+
+.drop{
+  position: relative;
+  width: 350px;
+  height: 350px;
+  transition: .5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 62% 38% 24% 76% / 59% 60% 40% 41%;
+  box-shadow: inset 20px 20px 20px rgba(0, 0, 0, .05),25px 35px 20px rgba(0, 0, 0, .05),25px 30px 30px rgba(0, 0, 0, .05),inset -20px -20px 25px rgba(255, 255, 255, .9);
+}
+.drop:hover{
+  border-radius: 50%;
+ 
+}
+
+.container .drop::before{
+
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 85px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgb(245, 245, 245);
+  opacity: .9;
+
+}
+
+.drop::after{
+  content: '';
+  position: absolute;
+  top: 85px;
+  left: 110px;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: white;
+  opacity: .9;
+
+}
+
+.drop .contant{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 40px;
+  gap: 15px;
+}
+.contant h2{
+  position: relative;
+  color: blue;
+  font-size: 1.5rem;
+
+}
+.contant form{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+form .input{
+  position: relative;
+  width: 225px;
+  box-shadow: inset 2px 5px 20px rgba(0, 0, 0, .01),inset -2px -5px 10px rgba(255, 255, 255, 1),15px 15px 10px rgba(0, 0, 0, .05),15px 10px 15px rgba(0, 0, 0, .025);
+
+  border-radius: 25px;
+  
+}
+
+form .input::before{
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.534);
+  border-radius: 10px 15px ;
+}
+.input input{
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 1rem;
+  padding: 10px 15px;
+  filter: drop-shadow( 0 0 2px blue);
+  color: rgb(0, 0, 255);
+  margin-left: 10px;
+  letter-spacing: .1rem;
+}
+.input input::placeholder{
+  color: rgba(0, 0, 255, 0.63);
+  
+}
+input[type='submit']{
+
+
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: .1rem;
+  font-weight: 600;
+  margin-left: 0px;
+}
+.input:last-child{
+  width: 120px;
+  background: #3a86ff;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, .01),15px 15px 10px rgba(0, 0, 0, .05),15px 10px 15px rgba(0, 0, 0, .025);
+  transition: .5s;
+  margin-left: 0px;
+}
+.input:last-child:hover{
+  width: 150px;
+  background: #126dff;
+
+}
+.btn{
+  border: none;
+  position: absolute;
+  right: -120px;
+  bottom: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  background: #19beff;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: whitesmoke;
+  letter-spacing: .2rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  transition: .5s;
+  text-align: center;
+  box-shadow: inset 10px 10px 10px rgba(0, 180, 216, .05),15px 25px 10px rgba(0, 180, 216, .1),15px 20px 20px rgba(0, 180, 216, .1),inset -10px -10px 15px rgba(255, 255, 255, .5)  ;
+
+  border-radius: 44% 56% 65% 35% / 57% 58% 42% 43%;
+}
+.btn::before{
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 30px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  opacity: .5;
+}
+.signup{
+  bottom: 150px;
+  border: none;
+  right: -140px;
+width: 80px;
+font-size: .8rem;
+height: 80px;
+border-radius: 49% 51%  52% 48% / 63% 59% 41% 37%;
+background: #7F66FF;
+box-shadow: inset 10px 10px 10px rgba(103, 0, 247, 0.05),15px 25px 10px rgba(140, 0, 247 , .02),15px 20px 20px rgba(140, 0, 247 , .1),inset -10px -10px 15px rgba(255, 255, 255, 0.5);
+}
+.signup::before{
+  left: 20px;
+  width: 13px;
+  height: 13px;
+}
+.btn:hover{
+  border-radius: 50%;
+}
+
+@keyframes kaif{
+
+0%{
+  top: -100vh;
+}
+100%{
+  top:15vh;
+}
+
+}
+@keyframes kaifrev{
+
+0%{
+  top: -100vh;
+}
+100%{
+  top:15vh;
+}
+
+}
+
+
+#p2{
+  background:#dcdcdc;
+  /* background:#dcdcdc65; */
+  /* background: rgb(0, 128, 0); */
+  width: 40%;
+  height: 70%;
+  /* left: 0; */
+  position: absolute;
+ 
+  animation: kaif 2s ;
+  transition: all ease 2s;
+  display: none;
+ backdrop-filter: blur(10px);
+ /* z-index: 10000; */
+}
+
+#p3{
+  background:#dcdcdc;
+  /* background: rgba(0, 128, 0, 0.164); */
+  width: 60%;
+  height: 70%;
+  /* left: 0; */
+  position: absolute;
+  /* z-index: 11000; */
+  animation: kaifrev 2s ;
+  transition: all ease 2s;
+  display: none;
+ backdrop-filter: blur(10px);
+}
+
+
+
